@@ -7,6 +7,7 @@ import {
 } from "./constants";
 
 interface Config {
+  PASSWORD: string;
   APP_VERSION: string;
   GITHUB_LINK: string;
   DONATION_LINK: string;
@@ -26,6 +27,7 @@ interface Config {
 }
 
 export interface RuntimeConfig {
+  PASSWORD: string;
   APP_VERSION: string;
   GITHUB_LINK: string;
   DONATION_LINK: string;
@@ -45,6 +47,7 @@ export interface RuntimeConfig {
 }
 
 const env: Record<keyof Config, undefined | string> = {
+  PASSWORD: import.meta.env.VITE_PASSWORD,
   TMDB_READ_API_KEY: import.meta.env.VITE_TMDB_READ_API_KEY,
   APP_VERSION: undefined,
   GITHUB_LINK: undefined,
@@ -89,6 +92,7 @@ export function conf(): RuntimeConfig {
   const proxyInstallLink = getKey("ONBOARDING_PROXY_INSTALL_LINK");
   const turnstileKey = getKey("TURNSTILE_KEY");
   return {
+    PASSWORD: getKey("PASSWORD"),
     APP_VERSION,
     GITHUB_LINK,
     DONATION_LINK,

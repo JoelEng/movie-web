@@ -21,6 +21,7 @@ import { useBackendUrl } from "@/hooks/auth/useBackendUrl";
 import { ErrorBoundary } from "@/pages/errors/ErrorBoundary";
 import { MigrationPart } from "@/pages/parts/migrations/MigrationPart";
 import { LargeTextPart } from "@/pages/parts/util/LargeTextPart";
+import { Password } from "@/password/Password";
 import App from "@/setup/App";
 import { conf } from "@/setup/config";
 import { useAuthStore } from "@/stores/auth";
@@ -153,9 +154,11 @@ root.render(
             <ProgressSyncer />
             <BookmarkSyncer />
             <SettingsSyncer />
-            <TheRouter>
-              <MigrationRunner />
-            </TheRouter>
+            <Password>
+              <TheRouter>
+                <MigrationRunner />
+              </TheRouter>
+            </Password>
           </ThemeProvider>
         </Suspense>
       </HelmetProvider>
