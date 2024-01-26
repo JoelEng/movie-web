@@ -4,6 +4,7 @@ import "./stores/__old/imports";
 import "@/setup/ga";
 import "@/assets/css/index.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import { StrictMode, Suspense, useCallback } from "react";
 import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
@@ -146,6 +147,7 @@ const root = createRoot(container!);
 
 root.render(
   <StrictMode>
+    <Analytics />
     <ErrorBoundary>
       <TurnstileProvider />
       <HelmetProvider>
