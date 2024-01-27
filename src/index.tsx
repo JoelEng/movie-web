@@ -147,7 +147,6 @@ const root = createRoot(container!);
 
 root.render(
   <StrictMode>
-    <Analytics />
     <ErrorBoundary>
       <TurnstileProvider />
       <HelmetProvider>
@@ -157,6 +156,7 @@ root.render(
             <BookmarkSyncer />
             <SettingsSyncer />
             <Password>
+              <Analytics />
               <TheRouter>
                 <MigrationRunner />
               </TheRouter>
